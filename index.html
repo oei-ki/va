@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>VA Corporation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script>
+    window.onload = () => {}
+  </script>
+  <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <div class="cursor_item"></div>
+    <header id="header">
+      <div class="nav-wrap">
+        <div class="logo"><img src="./img/logo-vac-nav.png" alt="logo"></div>
+        <nav id="top-nav">
+          <ul class="mainmenu">
+            <li><a href="#">ABOUT</a>
+              <ul class="submenu">
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Studio Infra</a></li>
+              </ul>
+            </li>
+            <li><a href="#">WORKS</a></li>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">CAREERS</a>
+              <ul class="submenu">
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Hiring</a></li>
+                <li><a href="#">Job Application</a></li>
+                <li><a href="#">Studio Infra</a></li>
+              </ul>
+            </li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+        </nav>
+        <div class="hamber">
+          <span class="ham"></span>
+          <span class="ham"></span>
+          <span class="ham"></span>
+        </div>
+      </div>
+    </header>
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <video autoplay="" loop="" muted="" playsinline="" poster="" preload="auto" class="heroVideo">
+            <source src="./img/박감독님.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay="" loop="" muted="" playsinline="" poster="" preload="auto" class="heroVideo">
+            <source src="./img/latt_main.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay="" loop="" muted="" playsinline="" poster="" preload="auto" class="heroVideo">
+            <source src="./img/kakao_main_low.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay="" loop="" muted="" playsinline="" poster="" preload="auto" class="heroVideo">
+            <source src="./img/makingfilm_main_low.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="swiper-slide">
+          <video autoplay="" loop="" muted="" playsinline="" poster="" preload="auto" class="heroVideo">
+            <source src="./img/PUBG_Esports_main_low2.mp4" type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    //커서 모양 바꾸기
+    let cursor;
+    let h1;
+    let x = 0, y = 0;
+    let mx = 0, my = 0;
+    const speed = 0.3;
+    const mouseFunc = (e) =>{
+        x = e.pageX, y = e.pageY;
+        // h1.innerHTML = `x: ${x} y: ${y}`;
+        cursor.style.transform = `translate(${mx}px, ${my}px)`;
+    }
+
+    const loop = () =>{
+        mx += (x - mx) * speed;
+        my += (y - my) * speed;
+
+        window.requestAnimationFrame(loop);
+    }
+
+    window.onload = () =>{
+        cursor = document.getElementsByClassName("cursor_item")[0];
+        h1 = document.getElementsByTagName("h1")[0];
+        document.addEventListener("mousemove", mouseFunc);
+        loop();
+    }
+  </script>
+</body>
+
+</html>
