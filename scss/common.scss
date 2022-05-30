@@ -8,9 +8,50 @@
     top: 0;
     margin-top: -25px;
     margin-left: -25px;
-    z-index: 9999;
+    z-index: 1000;
 }
 
 video {
   z-index: -1000;
+  width:100vw;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+
+}
+
+button {
+  border: 1px solid black;
+  background: white;
+  padding: 20px 40px;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  .col {
+    position: relative;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    p {
+      line-height: 30px;
+    }
+    .right {
+      float: right;
+    }
+  }
+  .item {
+    position: relative;
+    float: left;
+    display: block;
+    margin: 5px;
+    h2 {
+      position: absolute;
+      color: white;
+      bottom: 10px;
+      left: 10px;
+    }
+  }
 }
