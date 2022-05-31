@@ -43,11 +43,43 @@ button {
   float: right;
 }
 
+.row .col img {
+  width: 100%;
+}
+
 .row .item {
   position: relative;
   float: left;
   display: block;
   margin: 5px;
+  overflow: hidden;
+}
+
+.row .item:hover img {
+  transform: scale(1.1);
+}
+
+.row .item:hover h2:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 15px;
+  right: -100px;
+  background: white;
+}
+
+.row .item:hover h2:before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 2px;
+  right: -100px;
+  background: white;
+}
+
+.row .item img {
+  transition: .3s;
+  transform: scale(1);
 }
 
 .row .item h2 {
@@ -55,6 +87,18 @@ button {
   color: white;
   bottom: 10px;
   left: 10px;
+  z-index: 2;
+}
+
+.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: white;
+  color: white;
+  padding-top: 80px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 * {
@@ -76,24 +120,25 @@ body #header {
   width: 100%;
   height: 50px;
   z-index: 9999;
-  padding-top: 80px;
-  padding-left: 80px;
-  padding-right: 80px;
   box-sizing: border-box;
 }
 
-body #header .logo {
+body #header .nav-wrap {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+body #header .nav-wrap .logo {
   position: absolute;
   float: left;
+  top: 0;
+  left: 0;
 }
 
-body #header .logo img {
+body #header .nav-wrap .logo img {
   width: 50%;
-}
-
-body #header .nav-wrap {
-  position: relative;
-  width: 100%;
 }
 
 body #header .nav-wrap #top-nav {
@@ -107,6 +152,7 @@ body #header .nav-wrap #top-nav .mainmenu {
   position: absolute;
   justify-content: space-between;
   text-align: center;
+  margin: 0;
 }
 
 body #header .nav-wrap #top-nav .mainmenu li {
@@ -148,9 +194,9 @@ body #header .nav-wrap #top-nav .mainmenu li .submenu li a {
 body #header .nav-wrap .hamber {
   position: absolute;
   display: block;
+  top: 0;
   right: 0;
   width: 23px;
-  height: 18px;
 }
 
 body #header .nav-wrap .hamber span:after {
@@ -216,4 +262,12 @@ body .container {
 
 .ani-con .of-cover {
   position: absolute;
+}
+
+.portfolio-con {
+  width: 30%;
+}
+
+.portfolio-con img {
+  width: 100%;
 }

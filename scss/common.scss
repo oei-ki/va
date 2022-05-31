@@ -41,17 +41,56 @@ button {
     .right {
       float: right;
     }
+    img {
+      width: 100%;
+    }
   }
   .item {
     position: relative;
     float: left;
     display: block;
     margin: 5px;
+    overflow: hidden;
+    &:hover img {
+      transform: scale(1.1);
+    }
+    &:hover h2:after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 16px;
+      right: -100px;
+      background: white;
+    }
+    &:hover h2:before {
+      content: '';
+      position: absolute;
+      height: 16px;
+      width: 2px;
+      right: -100px;
+      background: white;
+    }
+    img {
+      transition: .3s;
+      transform: scale(1);
+    }
     h2 {
       position: absolute;
       color: white;
       bottom: 10px;
       left: 10px;
+      z-index: 2;
     }
   }
+}
+
+.fixed {
+  position: sticky;
+  top:0;
+  z-index: 10;
+  background: white;
+  color: white;
+  padding-top : 80px;
+  padding-left: 80px;
+  padding-right: 80px;
 }

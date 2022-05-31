@@ -11,6 +11,8 @@
     window.onload = () => {}
   </script>
   <link rel="stylesheet" href="./css/style.min.css">
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/common.js"></script>
 </head>
 
 <body>
@@ -19,28 +21,30 @@
     <header id="header">
       <div class="nav-wrap">
         <div class="logo"><img src="./img/logo-vac-nav.png" alt="logo"></div>
-        <nav id="top-nav">
-          <ul class="mainmenu">
-            <li><a href="#">ABOUT</a>
-              <ul class="submenu">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">StudioInfra</a></li>
-              </ul>
-            </li>
-            <li><a href="#">WORKS</a></li>
-            <li><a href="#">NEWS</a></li>
-            <li><a href="#">CAREERS</a>
-              <ul class="submenu">
-                <li><a href="#">Overview</a></li>
-                <li><a href="#">Hiring</a></li>
-                <li><a href="#">JobApplication</a></li>
-              </ul>
-            </li>
-            <li><a href="#">CONTACT</a></li>
-          </ul>
-        </nav>
+        <div class="nav-con">
+          <nav id="top-nav">
+            <ul class="mainmenu">
+              <li><a href="#">ABOUT</a>
+                <ul class="submenu">
+                  <li><a href="#">Overview</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">StudioInfra</a></li>
+                </ul>
+              </li>
+              <li><a href="#">WORKS</a></li>
+              <li><a href="#">NEWS</a></li>
+              <li><a href="#">CAREERS</a>
+                <ul class="submenu">
+                  <li><a href="#">Overview</a></li>
+                  <li><a href="#">Hiring</a></li>
+                  <li><a href="#">JobApplication</a></li>
+                </ul>
+              </li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </nav>
+        </div>
         <div class="hamber">
           <span class="ham"></span>
           <span class="ham"></span>
@@ -113,7 +117,7 @@
             <p>원스톱-메타버스 플랫폼 기업으로, 가상현실을 통해 무한한<br>크리에이티브의 가능성을 제시합니다. 아시아 최대의 스튜디오 인프라와<br>기술을 바탕으로 최상의 메타버스 콘텐츠 제작 환경을 제공합니다. 현실의<br>가치를 창조합니다.</p>
           </div>
         </div>
-        <button>VIEW OUR STORY</button>
+        <button class="btn">VIEW OUR STORY</button>
       </div>
     </section>
     <section>
@@ -252,7 +256,85 @@
       </div>
     </div>
   </section>
-  </div>
+  <section>
+    <div class="container">
+      <h2>News</h2>
+      <div class="row">
+        <div class=" col portfolio-con">
+          <img src="./img/앰버린_2022-05-18-074746_fdqj.png" alt="img01">
+          <h2>브이에이코퍼레이션, 공연·XR 콘텐츠 기업 ‘앰버린’에 전략적 지분 투자…차세대 콘텐츠 기술력 확보</h2>
+          <p>2022. 05. 12</p>
+        </div>
+        <div class="col portfolio-con">
+          <img src="./img/루트엠엔씨_2022-05-18-075001_xgfn.png" alt="img01">
+          <h2>브이에이코퍼레이션, 메타버스 방송 제작사 “루트엠엔씨” 인수…기술 기반 콘텐츠 역량 확대</h2>
+          <p>2022. 05. 09</p>
+        </div>
+        <div class="col portfolio-con">
+          <img src="./img/IT-동아.png" alt="img01">
+          <h2>"현실이랑 다른 게 뭐야?"... 카카오·디즈니+도 버추얼 프로덕션에 뛰어든다</h2>
+          <p>2022. 04. 06</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="row">
+      <div class=" col-bottom">
+        <div class="bottom-txt">
+          <h2>Careers</h2>
+          <h1>Join Our Team</h1>
+          <span>MORE</span>
+        </div>
+      </div>
+      <div class="col-bottom">
+        <div class="bottom-txt">
+          <h2>Contact</h2>
+          <h1>We will respond shortly</h1>
+          <span>MORE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="f-left">
+        <h1>Innovate The Future of Content Production</h1>
+        <p><span>대표자</span> 김동언</p>
+        <p><span>이메일</span> contact@vacorp.co.kr</p>
+        <p><span>주소</span>서울시 강남구 언주로 149길 17 (논현동)</p>
+        <p><span>사업자등록번호</span>503-86-20023</p>
+        <button class="btn">COMPANY BRIEF</button>
+      </div>
+      <div class="f-right">
+        <ul>
+          <li><a href="#">ABOUT</a>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Studio Infra</a></li>
+            </ul>
+          </li>
+          <li><a href="#">WORKS</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">CAREERS</a>
+            <ul>
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">Hiring</a></li>
+              <li><a href="#">Job Application</a></li>
+            </ul>
+          </li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+      <hr>
+      <div class="logo"><img src="./img/logo-vac-nav.png" alt="logo"></div>
+      <p>© 2022 VA Corporation. All Rights Reserved.</p>
+    </div>
+  </footer>
+</div>
+
   <script>
     var swiper = new Swiper(".mySwiper", {
       spaceBetween: 30,
