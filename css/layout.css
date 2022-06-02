@@ -120,3 +120,112 @@ body .container {
   margin: 0 auto;
   padding: 100px 0;
 }
+
+body footer {
+  background: #2b2b2b;
+  color: white;
+}
+
+body footer .footer-inner {
+  padding: 60px 130px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body footer .footer-inner .f-con {
+  display: flex;
+}
+
+body footer .footer-inner .f-con .f-left {
+  flex: 50%;
+  left: 0;
+}
+
+body footer .footer-inner .f-con .f-left h1 {
+  margin: 0;
+}
+
+body footer .footer-inner .f-con .f-left p {
+  height: 10px;
+  line-height: 10px;
+  font-size: 14px;
+  color: #cccccc;
+}
+
+body footer .footer-inner .f-con .f-left p span {
+  display: inline-block;
+  width: 120px;
+  font-size: 12px;
+  color: #b5b5b5;
+}
+
+body footer .footer-inner .f-con .f-left button {
+  display: block;
+  border: 1px solid #b0b0b0;
+  color: white;
+  margin: 30px 0;
+}
+
+body footer .footer-inner .f-con .f-right {
+  flex: 50%;
+  right: 0;
+}
+
+body footer .footer-inner .f-con .f-right ul {
+  position: absolute;
+  padding: 0;
+  margin: 0 auto;
+}
+
+body footer .footer-inner .f-con .f-right ul li {
+  float: left;
+  margin-right: 100px;
+  font-weight: bold;
+}
+
+body footer .footer-inner .f-con .f-right ul li ul {
+  position: relative;
+}
+
+body footer .footer-inner .f-con .f-right ul li ul li {
+  font-weight: 200;
+  color: #b0b0b0;
+  margin: 0 auto;
+  float: none;
+}
+
+body footer .footer-inner .f-con .f-right ul li ul li a {
+  line-height: 35px;
+  height: 35px;
+}
+
+body footer .footer-inner .f-con .f-right ul li:last-child {
+  margin-right: 0;
+}
+
+body footer .footer-inner hr {
+  background: #cccccc;
+  opacity: .5;
+  height: 0.5px;
+  margin: 0 0 30px 0;
+}
+
+body footer .footer-inner .f-bottom {
+  display: flex;
+}
+
+body footer .footer-inner .f-bottom .logo {
+  width: 10%;
+}
+
+body footer .footer-inner .f-bottom .logo img {
+  width: 100%;
+}
+
+body footer .footer-inner .f-bottom p {
+  margin: 0 auto;
+}
+
+body footer .footer-inner .f-bottom svg {
+  padding-right: 20px;
+}

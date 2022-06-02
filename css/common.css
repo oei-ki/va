@@ -8,7 +8,9 @@
   top: 0;
   margin-top: -25px;
   margin-left: -25px;
-  z-index: 1000;
+  user-select: none;
+  pointer-events: none;
+  z-index: 999;
 }
 
 video {
@@ -20,13 +22,40 @@ video {
 
 button {
   border: 1px solid black;
-  background: white;
+  background: rgba(255, 255, 255, 0);
   padding: 20px 40px;
+  transition: .2;
+}
+
+button:before {
+  content: 'VIEW OUR STORY';
+  position: absolute;
+  transform: translateY(100%);
+  transition: .5s;
+}
+
+button:hover {
+  border: 1px solid #5ab862;
+  color: #5ab862;
+}
+
+button span {
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+button:hover span {
+  transform: translateY(-20px);
+}
+
+button:hover:before {
+  opacity: 1;
+  visibility: visible;
 }
 
 .row {
   position: relative;
   display: flex;
+  justify-content: space-between;
 }
 
 .row .col {
@@ -45,6 +74,7 @@ button {
 
 .row .col img {
   width: 100%;
+  height: 350px;
 }
 
 .row .item {
@@ -90,6 +120,25 @@ button {
   z-index: 2;
 }
 
+.row .col-bottom {
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+  align-items: center;
+}
+
+.row .col-bottom:nth-of-type(1) {
+  background-image: url("../img/banner01.png");
+}
+
+.row .col-bottom:nth-of-type(2) {
+  background-image: url("../img/banner02.png");
+}
+
+.row .col-bottom .bottom-txt {
+  padding: 60px;
+}
+
 .fixed {
   position: sticky;
   top: 0;
@@ -99,4 +148,8 @@ button {
   padding-top: 80px;
   padding-left: 80px;
   padding-right: 80px;
+}
+
+.swiper-slide {
+  margin: 0;
 }
