@@ -15,9 +15,8 @@
 
 video {
   z-index: -1000;
-  width: 100%;
-  height: 100vh;
   flex-shrink: 0;
+  width: 100%;
 }
 
 button {
@@ -60,8 +59,13 @@ button:hover:before {
 
 .row .col {
   position: relative;
+  display: block;
   padding: 0 10px;
   margin-bottom: 10px;
+}
+
+.row .col:hover img {
+  transform: scale(1.1);
 }
 
 .row .col p {
@@ -72,9 +76,15 @@ button:hover:before {
   float: right;
 }
 
-.row .col img {
+.row .col .infra-item {
+  overflow: hidden;
+  height: 350px;
+}
+
+.row .col .infra-item img {
   width: 100%;
   height: 350px;
+  transition: .3s;
 }
 
 .row .item {
@@ -83,10 +93,15 @@ button:hover:before {
   display: block;
   margin: 5px;
   overflow: hidden;
+  height: 280px;
 }
 
 .row .item:hover img {
   transform: scale(1.1);
+}
+
+.row .item:hover h2 {
+  bottom: 15px;
 }
 
 .row .item:hover h2:after {
@@ -94,7 +109,8 @@ button:hover:before {
   position: absolute;
   height: 2px;
   width: 16px;
-  right: -100px;
+  right: 10px;
+  bottom: 15px;
   background: white;
 }
 
@@ -103,7 +119,7 @@ button:hover:before {
   position: absolute;
   height: 16px;
   width: 2px;
-  right: -100px;
+  right: 17px;
   background: white;
 }
 
@@ -113,11 +129,14 @@ button:hover:before {
 }
 
 .row .item h2 {
+  width: 95%;
   position: absolute;
   color: white;
   bottom: 10px;
   left: 10px;
   z-index: 2;
+  font-size: 18px;
+  transition: .5s ease;
 }
 
 .row .col-bottom {
@@ -275,6 +294,7 @@ body .container {
   width: 1140px;
   margin: 0 auto;
   padding: 100px 0;
+  z-index: 1;
 }
 
 body footer {
@@ -473,8 +493,11 @@ body footer .footer-inner .f-bottom svg {
 }
 
 .video-con {
-  z-index: -10;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  height: 100%;
   width: 100%;
-  height: 100vh;
-  flex-shrink: 0;
+  top: 0;
+  left: 0;
 }
