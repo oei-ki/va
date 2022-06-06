@@ -24,14 +24,31 @@
   .team-img-con {
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
     .team-img-box{
-      margin-right: 200px;
+      padding-right: 200px;
       height: 140px;
       align-items: center;
+      justify-content: space-between;
       display: flex;
+      flex-direction: column;
+      width: 150px;
       img {
         width: 100%;
+        display: block;
+        padding: 30px 0;
+      }
+      .hide-txt {
+        color: white;
+        transition: .2 ease;
+        transform: translateY(0px);
+        opacity: 0;
+      }
+      &:hover .hide-txt {
+        display: block;
+        transform: translateY(-20px);
+        opacity: 1;
       }
     }
   }

@@ -17,6 +17,8 @@ video {
   z-index: -1000;
   flex-shrink: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 button {
@@ -24,28 +26,40 @@ button {
   background: rgba(255,255,255,0);
   padding: 20px 40px;
   transition: .2;
-  &:before {
-    content: 'VIEW OUR STORY';
-    position: absolute;
-    transform: translateY(100%);
-    transition: .5s;
-    // display: block;
+  a {
+    color: black;
+      &:before {
+        content: 'VIEW OUR STORY';
+        font-weight: bold;
+        position: absolute;
+        transition: .3s;
+        transform: translateY(30px);
+        opacity: 0;
+      }
+  }
+  span {
+    font-weight: bold;
+    transform: translateY(0px);
+    display: inline-block;
+    opacity: 1;
+    transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+  &:hover a:before {
+    // opacity: 0;
+    // visibility: hidden;
+    opacity: 1;
+    transform: translateY(0px);
+    visibility: visible;
+    color: #5ab862;
+  }
+  &:hover span {
+    transform: translateY(-30px);
+    opacity: 0;
+    color: #5ab862;
   }
   &:hover {
     border: 1px solid #5ab862;
     color: #5ab862;
-  }
-  span {
-    transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  }
-  &:hover span {
-    transform: translateY(-20px);
-    // opacity: 0;
-    // visibility: hidden;
-  }
-  &:hover:before {
-    opacity: 1;
-    visibility: visible;
   }
 }
 
