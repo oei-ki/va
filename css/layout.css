@@ -23,12 +23,10 @@ body #header {
 body #header .nav-wrap {
   box-sizing: border-box;
   display: flex;
-  align-items: center;
   width: 100%;
 }
 
 body #header .nav-wrap .logo {
-  position: absolute;
   float: left;
   top: 0;
   left: 0;
@@ -89,29 +87,28 @@ body #header .nav-wrap #top-nav .mainmenu li .submenu li a {
 }
 
 body #header .nav-wrap .hamber {
-  position: absolute;
-  display: block;
+  display: grid;
   top: 0;
   right: 0;
-  width: 23px;
+  width: 100%;
+  position: relative;
 }
 
-body #header .nav-wrap .hamber span:after {
+body #header .nav-wrap .hamber .ham {
   right: 0;
   position: absolute;
   display: block;
-  content: '';
-  width: 100%;
+  width: 23px;
   height: 2px;
   background: white;
 }
 
-body #header .nav-wrap .hamber span:nth-of-type(2):after {
+body #header .nav-wrap .hamber .ham:nth-of-type(2) {
   width: 30px;
   top: 9px;
 }
 
-body #header .nav-wrap .hamber span:nth-child(3):after {
+body #header .nav-wrap .hamber .ham:nth-child(3) {
   top: 18px;
 }
 

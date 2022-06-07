@@ -13,10 +13,30 @@
   z-index: 999;
 }
 
+.header-padding {
+  padding: 100px;
+}
+
+.header-sticky {
+  background: white;
+  color: #3b3b3b;
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  box-shadow: 0px 0px 30px 0px #cfcccc;
+  transition: all 0.4s ease;
+}
+
+.header-sticky a {
+  color: black;
+}
+
 video {
   z-index: -1000;
   flex-shrink: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 button {
@@ -26,29 +46,43 @@ button {
   transition: .2;
 }
 
-button:before {
+button a {
+  color: black;
+}
+
+button a:before {
   content: 'VIEW OUR STORY';
+  font-weight: bold;
   position: absolute;
-  transform: translateY(100%);
-  transition: .5s;
+  transition: .3s;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+button span {
+  font-weight: bold;
+  transform: translateY(0px);
+  display: inline-block;
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+button:hover a:before {
+  opacity: 1;
+  transform: translateY(0px);
+  visibility: visible;
+  color: #5ab862;
+}
+
+button:hover span {
+  transform: translateY(-30px);
+  opacity: 0;
+  color: #5ab862;
 }
 
 button:hover {
   border: 1px solid #5ab862;
   color: #5ab862;
-}
-
-button span {
-  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-}
-
-button:hover span {
-  transform: translateY(-20px);
-}
-
-button:hover:before {
-  opacity: 1;
-  visibility: visible;
 }
 
 .row {
@@ -198,12 +232,10 @@ body #header {
 body #header .nav-wrap {
   box-sizing: border-box;
   display: flex;
-  align-items: center;
   width: 100%;
 }
 
 body #header .nav-wrap .logo {
-  position: absolute;
   float: left;
   top: 0;
   left: 0;
@@ -264,29 +296,28 @@ body #header .nav-wrap #top-nav .mainmenu li .submenu li a {
 }
 
 body #header .nav-wrap .hamber {
-  position: absolute;
-  display: block;
+  display: grid;
   top: 0;
   right: 0;
-  width: 23px;
+  width: 100%;
+  position: relative;
 }
 
-body #header .nav-wrap .hamber span:after {
+body #header .nav-wrap .hamber .ham {
   right: 0;
   position: absolute;
   display: block;
-  content: '';
-  width: 100%;
+  width: 23px;
   height: 2px;
   background: white;
 }
 
-body #header .nav-wrap .hamber span:nth-of-type(2):after {
+body #header .nav-wrap .hamber .ham:nth-of-type(2) {
   width: 30px;
   top: 9px;
 }
 
-body #header .nav-wrap .hamber span:nth-child(3):after {
+body #header .nav-wrap .hamber .ham:nth-child(3) {
   top: 18px;
 }
 
@@ -433,18 +464,37 @@ body footer .footer-inner .f-bottom svg {
 .ani-con .team-img-con {
   display: flex;
   flex-wrap: wrap;
-  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
 }
 
 .ani-con .team-img-con .team-img-box {
-  margin-right: 200px;
+  padding-right: 200px;
   height: 140px;
   align-items: center;
+  justify-content: space-between;
   display: flex;
+  flex-direction: column;
+  width: 150px;
 }
 
 .ani-con .team-img-con .team-img-box img {
   width: 100%;
+  display: block;
+  padding: 30px 0;
+}
+
+.ani-con .team-img-con .team-img-box .hide-txt {
+  color: white;
+  transition: .2 ease;
+  transform: translateY(0px);
+  opacity: 0;
+}
+
+.ani-con .team-img-con .team-img-box:hover .hide-txt {
+  display: block;
+  transform: translateY(-20px);
+  opacity: 1;
 }
 
 .ani-con .of-cover {
@@ -466,6 +516,30 @@ body footer .footer-inner .f-bottom svg {
 
 .portfolio-con:nth-of-type(2) {
   transform: translateY(70px);
+}
+
+.portfolio-con p {
+  position: relative;
+  display: inline;
+}
+
+.portfolio-con:hover p:before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 50px;
+  background: black;
+  display: inline-block;
+  bottom: 10px;
+  left: 0;
+}
+
+.portfolio-con:hover p:after {
+  content: 'EXPLORE PROJECT';
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  left: 0;
 }
 
 .portfolio-con .date {

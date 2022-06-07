@@ -12,6 +12,22 @@
     pointer-events: none;
     z-index: 999;
 }
+.header-padding {
+  padding: 100px;
+}
+.header-sticky {
+  background: white;
+  color: #3b3b3b;
+  top: 0;
+  left: 0;
+  padding: 10px 30px;
+  box-shadow: 0px 0px 30px 0px rgba(207, 204, 204, 10%);
+  transition: all 0.4s ease;
+  a {
+    color: black;
+  }
+}
+
 
 video {
   z-index: -1000;

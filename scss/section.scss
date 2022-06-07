@@ -69,6 +69,27 @@
   &:nth-of-type(2){
     transform: translateY(70px);
   }
+  p {
+    position: relative;
+    display: inline;
+  }
+  &:hover p:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 50px;
+    background:black;
+    display: inline-block;
+    bottom: 10px;
+    left: 0;
+  }
+  &:hover p:after {
+    content: 'EXPLORE PROJECT';
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    left: 0;
+  }
   .date {
     color: #a8a8a8;
     &:before {
